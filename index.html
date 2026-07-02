@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio TJKT | Muhamad Diyas Awaludin - Cyberpunk</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ===== SEMUA CSS SAMA SEPERTI SEBELUMNYA ===== */
+        /* (Gunakan CSS dari kode sebelumnya) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', monospace;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        :root {
+            --cyber-bg: #0a0a0f;
+            --cyber-dark: #050508;
+            --cyber-neon-pink: #ff00ff;
+            --cyber-neon-cyan: #00ffff;
+            --cyber-neon-purple: #b400ff;
+            --cyber-neon-green: #00ff88;
+            --cyber-glow-pink: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            --cyber-glow-cyan: 0 0 10px #00ffff, 0 0 20px #00ffff;
+            --cyber-glow-purple: 0 0 10px #b400ff, 0 0 20px #b400ff;
+            --grid-color: rgba(0, 255, 255, 0.05);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cyber-dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--cyber-neon-cyan);
+            border-radius: 4px;
+            box-shadow: var(--cyber-glow-cyan);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .navbar {
+            background: rgba(5, 5, 8, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--cyber-neon-cyan);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            background: var(--cyber-neon-cyan);
+            box-shadow: var(--cyber-glow-cyan);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyber-dark);
+            font-size: 1.2rem;
+        }
+
+        .logo h2 {
+            font-size: 1rem;
+            color: var(--cyber-neon-cyan);
+            text-shadow: var(--cyber-glow-cyan);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ccc;
+            font-weight: 600;
+            transition: 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyber-neon-pink);
+            text-shadow: 0 0 5px var(--cyber-neon-pink);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0a0a0f 0%, #0f0f1a 100%);
+            padding: 80px 0;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--cyber-neon-pink);
+            border-top: 2px solid var(--cyber-neon-cyan);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 255, 255, 0.03) 2px,
+                rgba(0, 255, 255, 0.03) 4px
+            );
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '<CYBERPUNK_PORTFOLIO/>';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 0.7rem;
+            color: rgba(0, 255, 255, 0.3);
+            font-family: monospace;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .school-badge {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyber-neon-cyan);
+            padding: 6px 18px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: var(--cyber-neon-cyan);
+            box-shadow: var(--cyber-glow-cyan);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--cyber-neon-cyan), var(--cyber-neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .hero-text .title {
+            font-size: 1.2rem;
+            color: var(--cyber-neon-pink);
+            margin-bottom: 20px;
+            font-weight: 500;
+            text-shadow: 0 0 5px var(--cyber-neon-pink);
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+            max-width: 550px;
+            line-height: 1.7;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: var(--cyber-neon-cyan);
+            color: var(--cyber-dark);
+            box-shadow: var(--cyber-glow-cyan);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--cyber-neon-cyan);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--cyber-neon-pink);
+            color: var(--cyber-neon-pink);
+            background: transparent;
+            box-shadow: 0 0 5px var(--cyber-neon-pink);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 0, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--cyber-neon-pink);
+        }
+
+        .hero-image {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            border-radius: 20px;
+            border: 3px solid var(--cyber-neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            transition: 0.3s;
+            filter: saturate(1.2) contrast(1.1);
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+        }
+
+        .section {
+            margin: 70px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cyber-neon-cyan), var(--cyber-neon-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .section-title:before {
+            content: '>';
+            color: var(--cyber-neon-green);
+            margin-right: 10px;
+            font-weight: 400;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cyber-neon-cyan), var(--cyber-neon-pink));
+            border-radius: 2px;
+        }
+
+        .skills-container {
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+        }
+
+        .skill-category {
+            margin-bottom: 35px;
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--cyber-neon-cyan);
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            display: inline-block;
+            text-shadow: 0 0 5px var(--cyber-neon-cyan);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-card {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            color: #ccc;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: monospace;
+        }
+
+        .skill-card i {
+            color: var(--cyber-neon-pink);
+            font-size: 0.85rem;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            background: rgba(0, 255, 255, 0.15);
+            border-color: var(--cyber-neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cert-card {
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyber-neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+
+        .cert-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid var(--cyber-neon-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .cert-icon i {
+            font-size: 2.5rem;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .cert-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .cert-card .cert-provider {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+
+        .cert-card .cert-issuer {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .cert-date {
+            font-size: 0.75rem;
+            color: var(--cyber-neon-green);
+            display: inline-block;
+            margin-top: 12px;
+            font-family: monospace;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 12px;
+            width: 100%;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .education-item {
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .education-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyber-neon-cyan);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+        }
+
+        .education-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyber-neon-cyan);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .education-icon i {
+            font-size: 2rem;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .education-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .education-major {
+            font-weight: 600;
+            color: var(--cyber-neon-pink);
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+        }
+
+        .education-year {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+        }
+
+        .education-desc {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--cyber-neon-purple);
+            box-shadow: 0 0 25px rgba(180, 0, 255, 0.3);
+        }
+
+        .project-icon {
+            width: 55px;
+            height: 55px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyber-neon-cyan);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .project-icon i {
+            font-size: 1.6rem;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .project-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .project-card p {
+            font-size: 0.85rem;
+            color: #aaa;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .project-tags span {
+            background: rgba(255, 0, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            color: var(--cyber-neon-pink);
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            background: rgba(10, 10, 15, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyber-neon-cyan);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyber-neon-cyan);
+            font-size: 1.2rem;
+        }
+
+        .contact-text h4 {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--cyber-neon-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--cyber-neon-cyan);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyber-neon-cyan);
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--cyber-neon-cyan);
+            color: var(--cyber-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--cyber-glow-cyan);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            color: var(--cyber-neon-cyan);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            font-family: 'Space Grotesk', monospace;
+            outline: none;
+            transition: 0.3s;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--cyber-neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .contact-form button {
+            background: var(--cyber-neon-cyan);
+            color: var(--cyber-dark);
+            border: none;
+            width: 100%;
+            justify-content: center;
+        }
+
+        footer {
+            background: var(--cyber-dark);
+            border-top: 2px solid var(--cyber-neon-pink);
+            text-align: center;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .section-title:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .section-title {
+                display: block;
+                text-align: center;
+            }
+            .logo h2 {
+                font-size: 0.8rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-img">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h2>Muhamad Diyas Awaludin</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">[HOME]</a></li>
+                <li><a href="#skills">[SKILLS]</a></li>
+                <li><a href="#education">[PENDIDIKAN]</a></li>
+                <li><a href="#certificates">[SERTIFIKAT]</a></li>
+                <li><a href="#projects">[PROJECTS]</a></li>
+                <li><a href="#contact">[CONTACT]</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="school-badge"><i class="fas fa-terminal"></i> SYSTEM://SMK_WIKRAMA_BOGOR</span>
+                    <h1>Muhamad Diyas Awaludin</h1>
+                    <div class="title">✨ Teknik Jaringan Komputer & Telekomunikasi (TJKT)</div>
+                    <p>Saya, Muhamad Diyas Awaludin, adalah siswa Teknik Jaringan Komputer dan Telekomunikasi (TJKT) yang memiliki minat dalam bidang jaringan komputer, administrasi server, dan cloud computing. Saya telah mempelajari serta mempraktikkan konfigurasi Linux Server, Web Server, DHCP & DNS Server, Ansible, AWS Cloud, dan dasar-dasar keamanan jaringan melalui kegiatan pembelajaran di sekolah.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn-primary"><i class="fas fa-paper-plane"></i> CONNECT</a>
+                        <a href="#projects" class="btn btn-outline"><i class="fas fa-network-wired"></i> SCAN_PROJECTS</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto Profil">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Skills -->
+        <div class="section" id="skills">
+            <h2 class="section-title">KOMPETENSI_TJKT</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> [NETWORKING_DASAR]</h3>
+                    <div class="skills-grid">
+                        <span class="skill-card"><i class="fas fa-server"></i> Instalasi Jaringan</span>
+                        <span class="skill-card"><i class="fas fa-shield-alt"></i> Keamanan Jaringan</span>
+                        <span class="skill-card"><i class="fas fa-globe"></i> Routing & Switching</span>
+                        <span class="skill-card"><i class="fas fa-wifi"></i> Wireless Networking</span>
+                        <span class="skill-card"><i class="fas fa-tools"></i> Troubleshooting</span>
+                        <span class="skill-card"><i class="fas fa-plug"></i> Fiber Optic</span>
+                        <span class="skill-card"><i class="fas fa-phone-alt"></i> Telekomunikasi Dasar</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-server"></i> [SISTEM_OPERASI_&_SERVER]</h3>
+                    <div class="skills-grid">
+                        <span class="skill-card"><i class="fab fa-windows"></i> Windows Server</span>
+                        <span class="skill-card"><i class="fab fa-linux"></i> Linux (Ubuntu/Debian)</span>
+                        <span class="skill-card"><i class="fas fa-globe"></i> Web Server</span>
+                        <span class="skill-card"><i class="fas fa-network-wired"></i> DHCP & DNS Server</span>
+                        <span class="skill-card"><i class="fas fa-envelope"></i> Mail Server</span>
+                        <span class="skill-card"><i class="fas fa-exchange-alt"></i> SFTP Server</span>
+                        <span class="skill-card"><i class="fas fa-share-alt"></i> SAMBA Server</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-microchip"></i> [PERANGKAT_JARINGAN]</h3>
+                    <div class="skills-grid">
+                        <span class="skill-card"><i class="fas fa-chalkboard-user"></i> MikroTik</span>
+                        <span class="skill-card"><i class="fas fa-network-wired"></i> Cisco Packet Tracer</span>
+                        <span class="skill-card"><i class="fas fa-tachometer-alt"></i> FTTH</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cloud"></i> [CLOUD_&_AUTOMATION]</h3>
+                    <div class="skills-grid">
+                        <span class="skill-card"><i class="fas fa-cloud"></i> Cloud Computing</span>
+                        <span class="skill-card"><i class="fab fa-aws"></i> AWS Cloud</span>
+                        <span class="skill-card"><i class="fas fa-robot"></i> Ansible Automation</span>
+                        <span class="skill-card"><i class="fas fa-server"></i> CyberPanel & WordPress Hosting</span>
+                        <span class="skill-card"><i class="fas fa-chart-line"></i> Zabbix Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pendidikan -->
+        <div class="section" id="education">
+            <h2 class="section-title">PENDIDIKAN</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-school"></i></div>
+                    <h3>SD Negeri Sindang Sari 2</h3>
+                    <div class="education-major">Sekolah Dasar</div>
+                    <span class="education-year"><i class="far fa-calendar-alt"></i> 2015 - 2021</span>
+                    <p class="education-desc">Menyelesaikan pendidikan dasar dengan baik dan aktif dalam kegiatan ekstrakurikuler.</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-building"></i></div>
+                    <h3>SMP Amaliah</h3>
+                    <div class="education-major">Sekolah Menengah Pertama</div>
+                    <span class="education-year"><i class="far fa-calendar-alt"></i> 2021 - 2024</span>
+                    <p class="education-desc">Mempelajari dasar-dasar teknologi dan mulai tertarik dengan dunia jaringan komputer.</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>SMK Wikrama Bogor</h3>
+                    <div class="education-major">Teknik Jaringan Komputer & Telekomunikasi (TJKT)</div>
+                    <span class="education-year"><i class="far fa-calendar-alt"></i> 2024 - 2027</span>
+                    <p class="education-desc">Mendalami jaringan komputer, server, fiber optik, dan teknologi telekomunikasi.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sertifikat -->
+        <div class="section" id="certificates">
+            <h2 class="section-title">SERTIFIKAT</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Cybersecurity Essentials</h3>
+                    <p class="cert-provider">Cisco Networking Academy</p>
+                    <p class="cert-issuer">Digitalent Kominfo</p>
+                    <span class="cert-date">[COMPLETED] 2024</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Introduction to Cybersecurity</h3>
+                    <p class="cert-provider">Cisco Networking Academy</p>
+                    <p class="cert-issuer">Digitalent Kominfo</p>
+                    <span class="cert-date">[COMPLETED] 2024</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section" id="projects">
+            <h2 class="section-title">PROJECTS</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Crimping & Instalasi Kabel LAN</h3>
+                    <p>Membuat kabel LAN tipe straight dan crossover menggunakan kabel UTP dan konektor RJ45 serta melakukan pengujian dengan LAN Tester.</p>
+                    <div class="project-tags">
+                        <span>UTP</span><span>RJ45</span><span>STRAIGHT</span><span>CROSSOVER</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-linux"></i></div>
+                    <h3>Linux Server Administration</h3>
+                    <p>Konfigurasi NAT Gateway, DHCP & DNS Server, SFTP Server, SAMBA Server, Web Server, dan Mail Server pada Debian Linux.</p>
+                    <div class="project-tags">
+                        <span>DEBIAN</span><span>NAT</span><span>WEB_SERVER</span><span>DHCP</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-aws"></i></div>
+                    <h3>AWS Cloud Computing</h3>
+                    <p>Membangun EC2 Instance, VPC, dan melakukan deploy Web Server pada AWS Cloud.</p>
+                    <div class="project-tags">
+                        <span>EC2</span><span>VPC</span><span>AWS</span><span>DEPLOY</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-server"></i></div>
+                    <h3>Hosting dengan CyberPanel & WordPress</h3>
+                    <p>Instalasi CyberPanel dan deploy website WordPress pada server hosting.</p>
+                    <div class="project-tags">
+                        <span>CYBERPANEL</span><span>WORDPRESS</span><span>HOSTING</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Network Security & Monitoring</h3>
+                    <p>Mempelajari keamanan jaringan serta melakukan monitoring server menggunakan Zabbix.</p>
+                    <div class="project-tags">
+                        <span>SECURITY</span><span>ZABBIX</span><span>MONITORING</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kontak -->
+        <div class="section" id="contact">
+            <h2 class="section-title">HUBUNGI_SAYA</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <h4>EMAIL</h4>
+                            <p>muhamaddiyas28@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-text">
+                            <h4>WHATSAPP</h4>
+                            <p>0882 9438 7705</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="contact-text">
+                            <h4>INSTAGRAM</h4>
+                            <p>@diyass28_</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div class="contact-text">
+                            <h4>GITHUB</h4>
+                            <p><a href="https://github.com/muhamaddiyasawaludin-jpg" target="_blank">github.com/muhamaddiyasawaludin-jpg</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <h4>ALAMAT</h4>
+                            <p>Jalan Raya Tajur, Kp Palasari</p>
+                        </div>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/muhamaddiyasawaludin-jpg" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://instagram.com/diyass28_" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> KIRIM_PESAN</h3>
+                    <form action="#" method="post">
+                        <input type="text" placeholder="[NAMA_LENGKAP]">
+                        <input type="email" placeholder="[EMAIL]">
+                        <input type="text" placeholder="[SUBJEK]">
+                        <textarea rows="4" placeholder="[PESAN_ANDA]"></textarea>
+                        <button type="submit" class="btn btn-primary" style="border: none; cursor: pointer; width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> SEND_MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Muhamad Diyas Awaludin | SMK Wikrama Bogor</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.7;"><i class="fas fa-terminal"></i> system_online // ready_to_deploy</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
